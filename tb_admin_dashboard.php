@@ -1,14 +1,13 @@
 <?php
 session_start();
 
+$username = $_SESSION['username'];
+
 // Check if the user is signed in
 if (!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] !== true) {
     header("Location: tb_admin_login_prompt.php");
     exit;
 }
-
-
-$username = $_SESSION['user_username'];
 
 if (isset($_POST['logout'])) {
     session_destroy();
@@ -16,17 +15,16 @@ if (isset($_POST['logout'])) {
     exit;
 }
 if (isset($_POST['Manage'])) {
-    header("Location: tb_admin_powers.php");
+    header("Location: admin_manager.php");
     exit;
 }
 
 // Database configuration
 $hostname = "localhost";
-$userdb = "root";
-$passdb = "";
-$dbname = "techbulletin1";
+$userdb = "id21040595_ahmer";
+$passdb = "Techbulletin#2023";
+$dbname = "id21040595_techbulletin";
 $conn = new mysqli($hostname, $userdb, $passdb, $dbname);
-
 // Check for connection errors
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

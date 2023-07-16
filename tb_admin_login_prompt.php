@@ -18,9 +18,11 @@ if (isset($_POST['login'])) {
     }
 
     $hostname = "localhost";
-    $userdb = "root";
-    $passdb = "";
-    $dbname = "techbulletin1";
+    $userdb = "id21040595_ahmer";
+    $passdb = "Techbulletin#2023";
+    $dbname = "id21040595_techbulletin";
+    $conn = new mysqli($hostname, $userdb, $passdb, $dbname);
+
 
     if (empty($errors)) {
         $conn = new mysqli($hostname, $userdb, $passdb, $dbname);
@@ -28,7 +30,7 @@ if (isset($_POST['login'])) {
             echo "Connection failed: " . $conn->connect_error;
             $conn->close();
         } else {
-          
+            $password = sha1($password);
 
             $sql = "SELECT admin_id, admin_email, admin_username FROM admin WHERE (admin_username = ? OR admin_email = ?) AND admin_password = ?";
             $stmt = $conn->prepare($sql);
@@ -38,9 +40,9 @@ if (isset($_POST['login'])) {
             if ($result->num_rows == 1) {
                 $row = $result->fetch_assoc();
                 $_SESSION['signed_in'] = true;
-                $_SESSION['user_username'] = $row['admin_username'];
-                $_SESSION['username'] = $username;
+                $_SESSION['username'] = $row['admin_username'];
                 $_SESSION['admin_id'] = $row['admin_id'];
+                $_SESSION['user_level'] = 1;
                 $stmt->close();
                 $conn->close();
                 header("Location: tb_admin_dashboard.php");

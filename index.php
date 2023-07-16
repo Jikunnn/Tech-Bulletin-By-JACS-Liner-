@@ -1,12 +1,12 @@
-<html>
-<head>
- <meta charset="utf-8">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Homepage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
-<style>
-       .title {
+	<style>
+        .title {
             font-size: 50px;
             font-weight: bold;
             padding-top: 0px;
@@ -45,14 +45,17 @@
         p {
             color: #fff; /* Set text color to white */
         }
-</style>
+
+    </style>
   </head>
   <body>
     <div class="container">
         <div class="welcome-text">
-            <center><marquee><h1 class="title">Registration Successful!</h1></marquee></center>
-            <h3 class="subtitle">You may now proceed to Login</p>
-            <br><a href="tb_login_prompt.php" class="btn btn-light" background-image="button">Login</a>		
+            <center><marquee><h1 class="title">Welcome to Tech-Bulletin!</h1></marquee></center>
+            <h3 class="subtitle">"Where Technology meets Freedom"</h3>
+            <p>Join us now and unlock a treasure trove of up-to-the-minute updates exclusively tailored for the FEU Community!</p>
+            <a href="tb_login_prompt.php" class="btn btn-light" background-image="button">Get Started</a>		
+			
 			<br></br>
 			<img src= "tech.png">
 			<img src= "tb.png">
@@ -64,3 +67,5 @@
 	
   </body>
 </html>
+
+

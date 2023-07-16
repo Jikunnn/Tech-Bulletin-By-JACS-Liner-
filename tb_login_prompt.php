@@ -21,9 +21,9 @@ if (isset($_POST['signup'])) {
     }
 
     $hostname = "localhost";
-    $userdb = "root";
-    $passdb = "";
-    $dbname = "techbulletin1";
+    $userdb = "id21040595_ahmer";
+    $passdb = "Techbulletin#2023";
+    $dbname = "id21040595_techbulletin";
 
     if (empty($errors)) {
         $conn = new mysqli($hostname, $userdb, $passdb, $dbname);
@@ -42,7 +42,7 @@ if (isset($_POST['signup'])) {
                 $row = $result->fetch_assoc();
                 $_SESSION['signed_in'] = true;
                 $_SESSION['user_username'] = $row['user_username'];
-                $_SESSION['username'] = $username;
+                $_SESSION['username'] = $row['user_username'];
                 $_SESSION['user_id'] = $row['user_id'];
                 $stmt->close();
                 $conn->close();

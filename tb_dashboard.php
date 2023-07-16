@@ -18,9 +18,9 @@ if (isset($_POST['logout'])) {
 
 // Database configuration
 $hostname = "localhost";
-$userdb = "root";
-$passdb = "";
-$dbname = "techbulletin1";
+$userdb = "id21040595_ahmer";
+$passdb = "Techbulletin#2023";
+$dbname = "id21040595_techbulletin";
 $conn = new mysqli($hostname, $userdb, $passdb, $dbname);
 
 // Check for connection errors

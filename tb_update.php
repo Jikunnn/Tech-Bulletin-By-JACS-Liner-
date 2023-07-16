@@ -2,12 +2,12 @@
 session_start();
 
 if (isset($_POST['update'])) {
-    // Database connection
     $hostname = "localhost";
-    $userdb = "root";
-    $passdb = "";
-    $dbname = "techbulletin1";
+    $userdb = "id21040595_ahmer";
+    $passdb = "Techbulletin#2023";
+    $dbname = "id21040595_techbulletin";
     $conn = new mysqli($hostname, $userdb, $passdb, $dbname);
+
 
     // Check connection
     if ($conn->connect_error) {
@@ -71,9 +71,9 @@ if (isset($_POST['update'])) {
 
 // Fetch user data from the database
 $hostname = "localhost";
-$userdb = "root";
-$passdb = "";
-$dbname = "techbulletin1";
+$userdb = "id21040595_ahmer";
+$passdb = "Techbulletin#2023";
+$dbname = "id21040595_techbulletin";
 $conn = new mysqli($hostname, $userdb, $passdb, $dbname);
 
 $session_id = $_SESSION['user_id'];
@@ -84,6 +84,10 @@ $fetch = $query->fetch_array();
 $profileImage = '';
 if ($fetch['user_profile']) {
     $profileImage = base64_encode($fetch['user_profile']);
+}
+if(isset($_POST['dashboard'])){
+    header("Location: tb_dashboard.php");
+    exit;
 }
 ?>
 
@@ -196,7 +200,7 @@ if ($fetch['user_profile']) {
             <input type="hidden" name="old_profile" value="<?php echo base64_encode($fetch['user_profile']); ?>">
             <input type="hidden" name="user_id" value="<?php echo $fetch['user_id']; ?>">
             <button type="submit" name="update">Update</button>
-            <button type="submit" name="login">Back to Login</button>
+            <button type="submit" name="dashboard">Back to Dashboard</button>
 
         </form>
     </div>

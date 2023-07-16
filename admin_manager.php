@@ -1,9 +1,9 @@
 <?php
 
 $hostname = "localhost";
-$userdb = "root";
-$passdb = "";
-$dbname = "techbulletin1";
+$userdb = "id21040595_ahmer";
+$passdb = "Techbulletin#2023";
+$dbname = "id21040595_techbulletin";
 $conn = new mysqli($hostname, $userdb, $passdb, $dbname);
 
 if ($conn->connect_errno) {
@@ -154,14 +154,12 @@ function deleteReply($conn, $replyId)
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-		
-		
     </style>
 	
 </head>
 <body>
 <div class="container">
-    <center><h1>Admin Manager</h1></center>
+    <h1>Admin Manager</h1>
     <label for="function">Select Function:</label>
     <select name="function" id="function" onchange="showForm()">
         <option value="createCategory">Create New Category</option>
@@ -256,7 +254,6 @@ function deleteReply($conn, $replyId)
 	<a href="tb_admin_dashboard.php"><button type="submit" value="Back">Back to Dashboard</button>
 	</div>
 	</div>
-	
 </body>
 
 </html>

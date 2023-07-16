@@ -30,9 +30,9 @@ if (isset($_POST['signup'])) {
 
     // Database connection
     $hostname = "localhost";
-    $userdb = "root";
-    $passdb = "";
-    $dbname = "techbulletin1";
+    $userdb = "id21040595_ahmer";
+    $passdb = "Techbulletin#2023";
+    $dbname = "id21040595_techbulletin";
     $conn = new mysqli($hostname, $userdb, $passdb, $dbname);
 
     if ($conn->connect_errno) {
@@ -190,20 +190,11 @@ if (isset($_POST['signup'])) {
         .container {
             max-width: 500px;
             margin: 50px auto;
-            padding: 10px 20px 20px;
+            padding: 20px;
             background-image: url('blur.jpg');
 			background-size: 500%;
             border-radius: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-		.container1 {			
-            height: 20%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.6); /* Set background color with opacity */
-			color: #fff; /* Set text color to white */
         }
 
         h2 {
@@ -250,9 +241,8 @@ if (isset($_POST['signup'])) {
 </head>
 
 <body>
-	<div class="container1"><h1>Welcome to Tech-Bulletin!</h1></div>
     <div class="container">
-        <h2>Create an Account</h2>
+        <h2>Signup</h2>
         <form method="post" action="" enctype="multipart/form-data">
             Enter First Name:
             <input type="text" name="fname" value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : ""; ?>" placeholder="First Name">
@@ -342,8 +332,6 @@ if (isset($_POST['signup'])) {
             <button type="submit" name="signup">Signup</button>
             <button type="submit" name="login">Back to Login</button>
         </form>
-		</div>
-		
     </div>
 </body>
 
